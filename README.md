@@ -13,12 +13,11 @@ Built with **React**, **Tailwind CSS**, and **Framer Motion**.
 
  # Installation
 
-```bash
-git clone https://github.com/username/CyberVerse-Explorer.git
+`git clone https://github.com/username/CyberVerse-Explorer.git
 cd CyberVerse-Explorer
 npm install
-npm start
-```
+npm run dev
+
 
 ## License
 
