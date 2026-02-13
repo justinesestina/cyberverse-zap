@@ -1,8 +1,22 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Briefcase, TrendingUp, DollarSign } from "lucide-react";
+import { X, Briefcase, TrendingUp, DollarSign, ShieldCheck, KeyRound, MonitorDot, ScanSearch, Bug, Fingerprint, Trophy, Siren, Settings, Globe, type LucideIcon } from "lucide-react";
 import { careers, type Career } from "@/data/careers";
 import CodeBlock from "./CodeBlock";
+
+const iconMap: Record<string, LucideIcon> = {
+  ShieldCheck, KeyRound, MonitorDot, ScanSearch, Bug, Fingerprint, Trophy, Siren, Settings, Globe,
+};
+
+const CareerIcon = ({ name, color }: { name: string; color: string }) => {
+  const Icon = iconMap[name];
+  if (!Icon) return null;
+  return (
+    <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${color}15` }}>
+      <Icon className="w-5 h-5" style={{ color }} />
+    </div>
+  );
+};
 
 const CareersSection = () => {
   const [selected, setSelected] = useState<Career | null>(null);
@@ -37,7 +51,7 @@ const CareersSection = () => {
               onClick={() => setSelected(career)}
               className="card-cyber text-left cursor-pointer"
             >
-              <div className="text-3xl mb-3">{career.icon}</div>
+              <CareerIcon name={career.icon} color={career.iconColor} />
               <h3 className="text-base font-bold text-foreground mb-2">{career.title}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">{career.shortDesc}</p>
             </motion.button>
@@ -68,7 +82,7 @@ const CareersSection = () => {
               </button>
 
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-4xl">{selected.icon}</span>
+                <CareerIcon name={selected.icon} color={selected.iconColor} />
                 <h3 className="text-2xl font-bold text-foreground">{selected.title}</h3>
               </div>
 

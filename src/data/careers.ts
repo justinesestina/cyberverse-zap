@@ -2,6 +2,7 @@ export interface Career {
   id: string;
   title: string;
   icon: string;
+  iconColor: string;
   shortDesc: string;
   description: string[];
   dailyResponsibilities: string[];
@@ -18,7 +19,8 @@ export const careers: Career[] = [
   {
     id: "ethical-hacker",
     title: "Ethical Hacker",
-    icon: "🛡️",
+    icon: "ShieldCheck",
+    iconColor: "#00e5ff",
     shortDesc: "Legally break into systems to find and fix vulnerabilities.",
     description: [
       "Ethical Hackers, also known as White Hat Hackers, are authorized security professionals who simulate cyberattacks to identify vulnerabilities in an organization's systems, networks, and applications.",
@@ -47,7 +49,8 @@ function checkForCommonVulns(url) {
   {
     id: "pen-tester",
     title: "Penetration Tester",
-    icon: "🔓",
+    icon: "KeyRound",
+    iconColor: "#f97316",
     shortDesc: "Test system defenses by simulating real-world attacks.",
     description: [
       "Penetration Testers specialize in actively testing an organization's security by attempting to breach their defenses. They simulate real-world attack scenarios to evaluate how well security measures hold up.",
@@ -78,7 +81,8 @@ function getServiceName(port) {
   {
     id: "soc-analyst",
     title: "SOC Analyst",
-    icon: "📊",
+    icon: "MonitorDot",
+    iconColor: "#22c55e",
     shortDesc: "Monitor security systems and respond to threats in real-time.",
     description: [
       "Security Operations Center (SOC) Analysts are the front-line defenders who monitor an organization's security systems 24/7. They analyze alerts, investigate potential threats, and coordinate incident response.",
@@ -107,7 +111,8 @@ console.log("Suspicious activities:", suspicious);`,
   {
     id: "security-analyst",
     title: "Security Analyst",
-    icon: "🔍",
+    icon: "ScanSearch",
+    iconColor: "#c084fc",
     shortDesc: "Analyze threats and implement security measures to protect data.",
     description: [
       "Security Analysts assess an organization's security measures, identify weaknesses, and recommend improvements. They analyze security data, monitor systems for breaches, and develop policies to protect digital assets.",
@@ -135,7 +140,8 @@ function checkAccess(user, resource) {
   {
     id: "malware-analyst",
     title: "Malware Analyst",
-    icon: "🦠",
+    icon: "Bug",
+    iconColor: "#4ade80",
     shortDesc: "Study malicious software to understand and neutralize threats.",
     description: [
       "Malware Analysts reverse-engineer malicious software to understand how it works, what it does, and how to detect and neutralize it. They study viruses, trojans, ransomware, and other forms of malware.",
@@ -167,7 +173,8 @@ function analyzeFileBehavior(file) {
   {
     id: "forensics",
     title: "Digital Forensics Expert",
-    icon: "🔬",
+    icon: "Fingerprint",
+    iconColor: "#94a3b8",
     shortDesc: "Investigate cybercrimes by analyzing digital evidence.",
     description: [
       "Digital Forensics Experts investigate cybercrimes by collecting, preserving, and analyzing digital evidence from computers, networks, and mobile devices. Their work often supports law enforcement investigations.",
@@ -194,7 +201,8 @@ function buildTimeline(events) {
   {
     id: "bug-bounty",
     title: "Bug Bounty Hunter",
-    icon: "🏆",
+    icon: "Trophy",
+    iconColor: "#fbbf24",
     shortDesc: "Find and report security bugs in exchange for rewards.",
     description: [
       "Bug Bounty Hunters are independent security researchers who find vulnerabilities in companies' products and services in exchange for monetary rewards. Major companies like Google, Microsoft, and Meta run bug bounty programs.",
@@ -219,7 +227,8 @@ function findSubdomains(domain) {
   {
     id: "incident-responder",
     title: "Incident Responder",
-    icon: "🚨",
+    icon: "Siren",
+    iconColor: "#ef4444",
     shortDesc: "Respond to and manage active cybersecurity incidents.",
     description: [
       "Incident Responders are the cybersecurity equivalent of firefighters — they spring into action when a security breach occurs. They contain threats, minimize damage, and restore systems to normal operation.",
@@ -248,7 +257,8 @@ function classifyIncident(incident) {
   {
     id: "security-engineer",
     title: "Security Engineer",
-    icon: "⚙️",
+    icon: "Settings",
+    iconColor: "#38bdf8",
     shortDesc: "Design and build secure systems and security infrastructure.",
     description: [
       "Security Engineers design, build, and maintain an organization's security infrastructure. They implement security solutions, configure firewalls, set up intrusion detection systems, and automate security processes.",
@@ -280,7 +290,8 @@ function checkSecurityHeaders(headers) {
   {
     id: "threat-intel",
     title: "Threat Intelligence Analyst",
-    icon: "🌐",
+    icon: "Globe",
+    iconColor: "#6366f1",
     shortDesc: "Gather and analyze data about emerging cyber threats.",
     description: [
       "Threat Intelligence Analysts collect, analyze, and disseminate information about current and emerging cyber threats. They monitor threat landscapes, track threat actor groups, and provide actionable intelligence to help organizations proactively defend against attacks.",
