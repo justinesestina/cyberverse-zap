@@ -7,24 +7,54 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted" />
-      
-      {/* Floating orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/10 blur-[100px] animate-float" />
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-secondary/10 blur-[120px] animate-float-slow" />
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 rounded-full bg-accent/10 blur-[100px] animate-float-slower" />
+      {/* Deep layered gradient background */}
+      <div className="absolute inset-0" style={{
+        background: "radial-gradient(ellipse 120% 80% at 50% 40%, hsl(200 80% 8%) 0%, hsl(220 60% 4%) 50%, hsl(240 40% 2%) 100%)"
+      }} />
+
+      {/* Subtle scanlines */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
+        backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(185 100% 50% / 0.08) 2px, hsl(185 100% 50% / 0.08) 3px)",
+        backgroundSize: "100% 3px"
+      }} />
+
+      {/* Perspective grid floor */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "linear-gradient(180deg, transparent 40%, hsl(185 100% 50% / 0.03) 100%)"
+      }}>
+        <div className="absolute bottom-0 left-0 right-0 h-[60%] opacity-[0.06]" style={{
+          backgroundImage: "linear-gradient(hsl(185 100% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(185 100% 50%) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+          transform: "perspective(500px) rotateX(60deg)",
+          transformOrigin: "bottom center",
+        }} />
       </div>
 
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: "linear-gradient(hsl(185 100% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(185 100% 50%) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+      {/* Floating orbs - more realistic with varied sizes and colors */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[15%] left-[10%] w-[500px] h-[500px] rounded-full animate-float" style={{
+          background: "radial-gradient(circle, hsl(185 100% 50% / 0.08) 0%, transparent 70%)"
+        }} />
+        <div className="absolute top-[20%] right-[5%] w-[600px] h-[600px] rounded-full animate-float-slow" style={{
+          background: "radial-gradient(circle, hsl(270 100% 60% / 0.06) 0%, transparent 70%)"
+        }} />
+        <div className="absolute bottom-[10%] left-[20%] w-[400px] h-[400px] rounded-full animate-float-slower" style={{
+          background: "radial-gradient(circle, hsl(330 100% 50% / 0.05) 0%, transparent 70%)"
+        }} />
+        <div className="absolute top-[50%] right-[30%] w-[300px] h-[300px] rounded-full animate-float" style={{
+          background: "radial-gradient(circle, hsl(140 100% 50% / 0.04) 0%, transparent 70%)"
+        }} />
+      </div>
+
+      {/* Subtle noise texture overlay */}
+      <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+      }} />
+
+      {/* Horizontal glow line */}
+      <div className="absolute top-1/2 left-0 right-0 h-px opacity-[0.08]" style={{
+        background: "linear-gradient(90deg, transparent 0%, hsl(185 100% 50%) 30%, hsl(270 100% 60%) 50%, hsl(185 100% 50%) 70%, transparent 100%)"
+      }} />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <motion.div
