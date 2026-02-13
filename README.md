@@ -14,6 +14,7 @@ Built with **React**, **Tailwind CSS**, and **Framer Motion**.
  # Installation
 
 `git clone https://github.com/username/CyberVerse-Explorer.git
+
 cd CyberVerse-Explorer
 npm install
 npm run dev
