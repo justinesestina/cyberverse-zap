@@ -4,7 +4,6 @@ const HeroSection = () => {
   const handleExplore = () => {
     document.querySelector("#hacker-hats")?.scrollIntoView({ behavior: "smooth" });
   };
-
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Deep layered gradient background */}
